@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import Login from './Login/Login';
+import Login from './Login/LoginUseReducer';
 import Home from './Home/Home';
 import MainHeader from './MainHeader/MainHeader';
 

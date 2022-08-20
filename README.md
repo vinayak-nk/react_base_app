@@ -15,4 +15,10 @@ React Hooks
 
     -> DEBOUNCING: use clean up function to reduce number of side effects
     
+2. useReducer
+-----------------
+    -> instead of useState prefer useReducer if updating a state triggers another state update. Combine them into single state.
+
+    -> const [state, dispathcFn] = useReducer(reducerFn, initialState, initFn)
+    -> reducerFn is triggered automatically when action is dispatched (dispatchFn) -> returns new updated state
 
