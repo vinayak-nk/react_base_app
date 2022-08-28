@@ -22,3 +22,26 @@ React Hooks
     -> const [state, dispathcFn] = useReducer(reducerFn, initialState, initFn)
     -> reducerFn is triggered automatically when action is dispatched (dispatchFn) -> returns new updated state
 
+3. useContext
+---------------------
+const AuthContext = React.createContext(initialState)
+It takes an initial state.
+Provide ->
+    <AuthContext.Provider>
+        {children ....}
+    </AuthContext.Provider>
+consume -> 
+    <AuthContext.Consumer>
+      {(ctx) => {
+        return (
+          <>
+            {ctx.test}
+          </>
+        )
+      }}
+    </AuthContext.Consumer>
+
+  Limitations
+  ------------
+  1. Not optimized for high frequency changes => redux
+  2. Should not be used for all cmponent communications
