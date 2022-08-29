@@ -45,3 +45,19 @@ consume ->
   ------------
   1. Not optimized for high frequency changes => redux
   2. Should not be used for all cmponent communications
+
+4. useRef, forwardRef, useImperativeHandle
+--------------------------------------------
+  const emailInputRef = useRef();
+
+  const Test = forwardRef((props, ref) => {})
+
+  useImperativeHandle(ref, () => {return { focus: {} }})
+
+
+
+  Rule of Hooks
+  ===============
+  1. Only in React Functions and Custom hooks.
+  2. Only in Top level fns not in nested fns or block(eg. inisde if)
+  3. useEffect -> make sure add dependency
