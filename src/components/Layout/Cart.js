@@ -3,7 +3,7 @@ import classes from './Style.module.css'
 
 const HeaderCart = (props) => {
   return (
-    <button className={classes.button}>
+    <button className={classes.button} onClick={props.toggleCartDisplay}>
       <span className={classes.icon}>
         <CartIcon />
       </span>
