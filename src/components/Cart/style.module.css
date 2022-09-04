@@ -47,7 +47,7 @@
 
 
 /* ***** */
-.cart-item {
+/* .cart-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -111,4 +111,4 @@
 .cart-item button:active {
   background-color: #8a2b06;
   color: white;
-}
+} */
