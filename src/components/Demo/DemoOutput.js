@@ -8,4 +8,4 @@ const DemoOutput = ({ show }) => {
   )
 }
 
-export default DemoOutput
+export default React.memo(DemoOutput)

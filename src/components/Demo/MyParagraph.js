@@ -7,4 +7,4 @@ function MyParagraph({ show }) {
   )
 }
 
-export default MyParagraph
+export default React.memo(MyParagraph)

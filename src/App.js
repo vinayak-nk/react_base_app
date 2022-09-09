@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useCallback } from 'react';
 
 import DemoOutput from './components/Demo/DemoOutput';
 import Button from './components/UI/Button/Button'
@@ -9,12 +9,13 @@ function App() {
 
   console.log('APP RUNNING')
   
-  const handleBtnClick = () => {toggleShow((prevShow) => !prevShow)}
+  // useCallback(() => {}, [])
+  const handleBtnClick = useCallback(() => {toggleShow((prevShow) => !prevShow)}, [])
 
   return (
     <div className="app">
       <h1>Hi there!</h1>
-      <DemoOutput show={show} />
+      <DemoOutput show={false} />
       <Button onClick={handleBtnClick} >Toggle Paragraph</Button>
     </div>
   );
