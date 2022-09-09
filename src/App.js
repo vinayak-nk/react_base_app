@@ -1,7 +1,9 @@
+import UserFinder from './components/UserFinder';
+
 function App() {
   return (
-    <div className="App">
-      BASE APP
+    <div>
+      <UserFinder />
     </div>
   );
 }
