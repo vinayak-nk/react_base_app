@@ -3,6 +3,7 @@ import NormalComponent from "./Components/NormalCmp";
 import PureComponent from "./Components/PureCmp";
 import Memo from "./Components/Memo";
 import WithooutMemo from "./Components/WithoutMemo";
+import UseCallbackComp from "./Components/UseCallBackCmp";
 
 class App extends Component {
   constructor() {
@@ -23,6 +24,7 @@ class App extends Component {
         <PureComponent count={this.state.count} incerementCount={this.handleIncerementCount} />
         <Memo count={this.state.count} incerementCount={this.handleIncerementCount} />
         <WithooutMemo count={this.state.count} incerementCount={this.handleIncerementCount} />
+        <UseCallbackComp count={this.state.count} />
       </div>
     );
   }
