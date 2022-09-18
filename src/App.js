@@ -1,7 +1,21 @@
+import React from 'react'
+import { Article, Brand, CTA, Feature, Navigation } from './Components'
+import { About, Features, Footer, Header, Blog, Possibility } from './Containers'
+
 function App() {
   return (
     <div className="App">
-      BASE APP
+      <div className="gradient__bg">
+        <Navigation />
+        <Header />
+      </div>
+      <Brand />
+      <About />
+      <Features />
+      <Possibility />
+      <CTA />
+      <Blog />
+      <Footer />
     </div>
   );
 }
