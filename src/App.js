@@ -1,6 +1,7 @@
 import React from 'react'
 import { Article, Brand, CTA, Feature, Navigation } from './Components'
 import { About, Features, Footer, Header, Blog, Possibility } from './Containers'
+import './App.scss'
 
 function App() {
   return (
