@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+Pure Component, Memo, useCallback, useMemo
+=============================================
+Pure Component
+  Similar to React.Component.
+  Re-renders only when state or props changes.
+  ShouldComponentUpdate is automatically handled (Only shallow comparison)
+Memo
+  import React, { memo } from 'react'
+  Functional Components. Similar to Pure component for class based components.
+  16.6 version
+  HOC
+useCallback
+  The React useCallback Hook returns a memoized callback function.
+  prevent a component from re-rendering unless its props have changed.
+  only runs when one of its dependencies updates.
+  useCallback(fn, deps) is equivalent to useMemo(() => fn, deps).
+  const addTodo = useCallback( () => {}, [])
+useMemo
+  The useCallback and useMemo Hooks are similar. The main difference is that useMemo returns a memoized value and useCallback returns a memoized function.
+Diff: React.PureComponent vs React.Memo
+  Class based vs function based components.
+Diff: useCallback vs useMemo
+  useMemo returns a memoized value
+  React.useMemo(() => {   fooFunction()}, [dependencies])
+  useCallback returns a memoized callback
+  React.useCallback(() => {   fooFunction()}, [dependencies])
+  useCallback to memoize a function, which means that this function only gets re-defined if any of its dependencies in the dependency array change
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+HOC and Render Props
+======================
+HOC
+=====
+  Advanved technique to reuse code logic
+  function that takes a component and returns a new component.
+  EX: redux connect. React.memo
 
-In the project directory, you can run:
+  const EnhancedComments = HOC(Comments, 1)
+  const HOC = (Cmp) => {
+    return function Index () {
+      return <Cmp />
+    }
+  }
+  export default HOC
 
-### `npm start`
+Render Props
+============
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Code splitting, Lazy loading, Suspense
+==========================================
+  Reduce bundle size.
+  Suspending multiple components. Wait till all components are loaded.
+  Handle loading failures.
+  create multiple bundles that can be dynamically loaded at runtime.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
