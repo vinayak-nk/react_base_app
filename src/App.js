@@ -1,9 +1,11 @@
-import UserFinder from './components/UserFinder';
+import LifeCycle from './LifeCycle';
+import './App.css';
+
 
 function App() {
   return (
     <div>
-      <UserFinder />
+      <LifeCycle />
     </div>
   );
 }
