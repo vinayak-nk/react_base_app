@@ -3,6 +3,7 @@ import React, { useMemo } from 'react'
 const Demo = ({ title, items }) => {
 
   // const sortedList = items.sort((a,b) => a-b)
+  console.log('Items=', items);
   const sortedList = useMemo(() => {
     console.log('Items sorted');
     return items.sort((a, b) => a - b);

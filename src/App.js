@@ -4,6 +4,8 @@ import PureComponent from "./Components/PureCmp";
 import Memo from "./Components/Memo";
 import WithooutMemo from "./Components/WithoutMemo";
 import UseCallbackComp from "./Components/UseCallBackCmp";
+import UseCallbackPrb from "./Components/UseCallbackEx/Problem"
+import UseCallbackSolution from "./Components/UseCallbackEx/SolutionEx"
 
 class App extends Component {
   constructor() {
@@ -20,11 +22,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NormalComponent count={this.state.count} incerementCount={this.handleIncerementCount} />
+        {/* <NormalComponent count={this.state.count} incerementCount={this.handleIncerementCount} />
         <PureComponent count={this.state.count} incerementCount={this.handleIncerementCount} />
         <Memo count={this.state.count} incerementCount={this.handleIncerementCount} />
         <WithooutMemo count={this.state.count} incerementCount={this.handleIncerementCount} />
-        <UseCallbackComp count={this.state.count} />
+        <UseCallbackComp count={this.state.count} /> */}
+        <UseCallbackPrb />
+        <UseCallbackSolution />
       </div>
     );
   }

@@ -1,16 +1,16 @@
 import React, { PureComponent } from 'react'
 
 export default class pureComponent extends PureComponent {
-  constructor(props) {
-    super(props)
-    this.state = {
-      count: 0
-    }
-  }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     count: 0
+  //   }
+  // }
 
-  handleIncerementCount = () => {
-    this.setState({ count: 1 })
-  }
+  // handleIncerementCount = () => {
+  //   this.setState({ count: 1 })
+  // }
 
 
   render() {

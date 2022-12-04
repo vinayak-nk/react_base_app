@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 // import App from './Components/HocExample/App';
 // import App from './Components/ErrorBoundary/AppComp';
-import App from './Components/RenderProps/App';
+// import App from './Components/RenderProps/App';
+import App from './App'
+// import App from './Components/UseMemoExample/App'
+// import ProblemUseMemo from './Components/UseMemoExample/Problem_UseMemo'
+// import SolutionUseMemo from './Components/UseMemoExample/Solution_UseMemo'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
