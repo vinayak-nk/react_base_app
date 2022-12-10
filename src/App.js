@@ -1,11 +1,11 @@
 import { PreviousState, ObjectUseState, ArrayUseState } from './Hooks/UseState'
 import CodeSplitting from './CodeSplitting';
-import USeEffectComp from './Hooks/UseEffect'
+import UseReducerCmp from './Hooks/UseReducer'
 
 function App() {
   return (
     <div className="App">
-      <USeEffectComp />
+      <UseReducerCmp />
     </div>
   );
 }
