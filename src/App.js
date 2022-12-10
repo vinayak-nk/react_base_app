@@ -1,11 +1,11 @@
 import { PreviousState, ObjectUseState, ArrayUseState } from './Hooks/UseState'
 import CodeSplitting from './CodeSplitting';
-import UseReducerCmp from './Hooks/UseReducer'
+import UseCallbackCmp from './Hooks/UseCallback'
 
 function App() {
   return (
     <div className="App">
-      <UseReducerCmp />
+      <UseCallbackCmp />
     </div>
   );
 }
