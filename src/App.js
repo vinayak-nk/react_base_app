@@ -1,11 +1,11 @@
 import { PreviousState, ObjectUseState, ArrayUseState } from './Hooks/UseState'
 import CodeSplitting from './CodeSplitting';
-import UseCallbackCmp from './Hooks/UseCallback'
+import CustomHooks from './Hooks/CustomHooks'
 
 function App() {
   return (
     <div className="App">
-      <UseCallbackCmp />
+      <CustomHooks />
     </div>
   );
 }
