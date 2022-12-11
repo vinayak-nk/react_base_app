@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+React-Router
+=============
+npm i react-router-dom
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Configure Routes
+  import { BrowserRouter } from 'react-router-dom'
 
-## Available Scripts
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
 
-In the project directory, you can run:
+  import { Routes, Route } from 'react-router-dom'
 
-### `npm start`
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+  </Routes>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Navigation on button click
+  import { Link } from "react-router-dom"
+    <Link to="/" >Home</Link>
+    <Link to="/about">About</Link>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. Navigate programatically
+  import { useNavigate } from 'react-router'
+  
+  const navigate = useNavigate()
 
-### `npm test`
+  onClick={() => navigate('order-summary')}
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  go back to previos page
+  ---------
+  <button onClick={() => naviagate(-1)} >Go Back</button>
+4. No Match Route
+  <Route path="*" element={<NoMatch />} />
+5. Nested Routes
+    <Route path="products" element={<Products />}>
+      <Route path="featured"  element={<FeaturedProducts />} />
+      <Route path='new' element={<NewProducts />} />
+    </Route>
 
-### `npm run build`
+    import { Link, Outlet } from 'react-router-dom'
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+6. Index Route
+  <Route index element={<FeaturedProducts />} />
+7. Dynamic Routes, URL params
+  <Route path="users/:id" element={<UserDetails />} />
+8. params
+  import { useParams } from 'react-router'
+  const params = useParams
+9. Search Params
+  import { useSearchParams } from 'react-router-dom'
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  const [searchParams, setSearchParams] = useSearchParams()
+  const showActiveUsers = searchParams.get('filter') === 'active'
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  <button onClick={() => setSearchParams({ filter: 'active' })}>Active Users</button>
+  <button onClick={() => setSearchParams({})}>Reset Filter</button>
 
-### `npm run eject`
+10. Lazy Loading
+  import React, { lazy, Suspense } from 'react'
+  const LazyAbout = lazy(() => import('./Components/About') )
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  <Route path="about" element={
+    <Suspense fallback={<>Loading....</>}>
+      <LazyAbout />
+    </Suspense>
+    } />
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

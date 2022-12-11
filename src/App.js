@@ -1,7 +1,9 @@
+import ReactRouter from './ReactRouter'
+
 function App() {
   return (
     <div className="App">
-      BASE APP
+      <ReactRouter />
     </div>
   );
 }
